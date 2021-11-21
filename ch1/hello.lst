@@ -1,0 +1,17 @@
+     1                                  ;hello.asm
+     2                                  section .data
+     3 00000000 48656C6C6F2C20776F-       msg db "Hello, world!", 0
+     3 00000009 726C642100         
+     4                                  section .bss
+     5                                  section .text
+     6                                    global main
+     7                                  main:
+     8 00000000 B801000000                mov rax,1
+     9 00000005 BF01000000                mov rdi,1
+    10 0000000A 48BE-                     mov rsi,msg
+    10 0000000C [0000000000000000] 
+    11 00000014 BA0C000000                mov rdx,12
+    12 00000019 0F05                      syscall
+    13 0000001B B83C000000                mov rax,60
+    14 00000020 BF00000000                mov rdi,0
+    15 00000025 0F05                      syscall
